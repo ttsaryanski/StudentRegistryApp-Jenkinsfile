@@ -6,6 +6,13 @@ pipeline{
                 bat 'npm install'
             }
         }
+        stage("Fix vulnerabilities"){
+            steps{
+                bat 'npm audit fix'
+            }
+        }
+        parallel{
+        failFast true
         stage("Run security checks"){
             steps{
                 bat 'npm audit'
@@ -15,6 +22,8 @@ pipeline{
             steps{
                 bat 'npm test'
             }
+        }
+
         }
     }
 }
