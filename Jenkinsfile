@@ -11,19 +11,20 @@ pipeline{
                 bat 'npm audit fix'
             }
         }
-        parallel{
-        failFast true
-        stage("Run security checks"){
-            steps{
-                bat 'npm audit'
-            }
-        }
-        stage("Run tests"){
-            steps{
-                bat 'npm test'
-            }
-        }
-
+        stage("Check and test"){
+            parallel{
+            failFast true
+                stage("Run security checks"){
+                    steps{
+                        bat 'npm audit'
+                    }
+                }
+                stage("Run tests"){
+                    steps{
+                        bat 'npm test'
+                    }
+                }
+            }         
         }
     }
 }
