@@ -10,6 +10,8 @@ pipeline{
             steps{
                 bat 'npm audit fix --force'
             }
+        }
+        stage("Fix vulnerabilities 2"){
             steps{
                 bat 'npm audit fix'
             }
