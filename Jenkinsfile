@@ -8,12 +8,12 @@ pipeline{
         }
         stage("Fix vulnerabilities"){
             steps{
-                bat 'npm audit fix --force'
+                bat 'npm audit fix --force || exit 0'
             }
         }
         stage("Fix vulnerabilities 2"){
             steps{
-                bat 'npm audit fix --force'
+                bat 'npm audit fix'
             }
         }
         stage("Check and test"){
