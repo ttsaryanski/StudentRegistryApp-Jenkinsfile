@@ -8,9 +8,10 @@ pipeline{
         }
         stage("Fix vulnerabilities"){
             steps{
-                bat 'npm audit fix'
+                bat 'npm audit fix --force'
             }
         }
+        failFast true
         stage("Check and test"){
             parallel{
                 //failFast true
