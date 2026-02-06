@@ -13,7 +13,7 @@ pipeline{
         }
         stage("Check and test"){
             parallel{
-                failFast true
+                //failFast true
                 stage("Run security checks"){
                     steps{
                         bat 'npm audit'
