@@ -1,7 +1,8 @@
-# GitHub Actions Playground
+# Jenkins CI/CD Pipeline
 
-⚠️ Experimental repository - Used for learning and testing:
+⚠️ Learning project - Used for studying and testing:
 
-- Jenkins Actions with pipeline
+- Jenkins Pipeline development
+- CI/CD automation
 
-Not intended for production use.
+Not intended for production use - educational purposes only.
